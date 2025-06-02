@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script type="text/javascript">
+    var flag = true;
+
+    function change() {
+        var video = document.getElementById("video");
+        var source = document.getElementById("videoSource");
+        if (flag) {
+            source.src = "https://www.w3schools.com/html/mov_bbb.ogg";
+            source.type = "video/ogg";
+            document.getElementById("demo").innerHTML = "Video source changed to OGG format.";
+            flag = false;
+        } else {
+            source.src = "https://www.w3schools.com/html/mov_bbb.mp4";
+            source.type = "video/mp4";
+            document.getElementById("demo").innerHTML = "Video source changed to MP4 format.";
+            flag = true;
+        }
+        video.load(); // Reload the video with the new source
+    }
+    </script>
+
+</head>
+
+<body style="text-align: center;">
+    <!-- Insert a video player -->
+    <video id="video" width="640" height="480" controls>
+        <source id="videoSource" src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <br>
+    <button onclick="change()" style="padding: 16px 16px;">Change Video</button>
+    <br>
+    <p id="demo" style="font-family: Calibri; ">Click the button to change the video format.</p>
+</body>
+
+</html>
