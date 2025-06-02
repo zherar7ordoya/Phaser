@@ -1,0 +1,14 @@
+{
+  "name": "bootstrap-hello-world",
+  "version": "1.0.0",
+  "description": "A simple project to display a Hello World message using Bootstrap.",
+  "main": "src/index.html",
+  "scripts": {
+    "start": "start src/index.html"
+  },
+  "dependencies": {
+    "bootstrap": "^5.1.3"
+  },
+  "author": "",
+  "license": "ISC"
+}
