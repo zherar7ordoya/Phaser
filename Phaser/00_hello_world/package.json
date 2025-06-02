@@ -1,0 +1,24 @@
+{
+  "name": "phaser-hello-world",
+  "version": "1.0.0",
+  "description": "A simple Hello World project using Phaser.",
+  "main": "src/main.js",
+  "scripts": {
+    "build": "webpack",
+    "start": "webpack serve --open"
+  },
+  "dependencies": {
+    "phaser": "^3.60.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "babel-loader": "^8.0.0",
+    "webpack": "^5.99.9",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
