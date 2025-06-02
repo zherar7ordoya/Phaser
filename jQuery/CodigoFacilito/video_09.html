@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+
+    <div class="myClass">
+        <article>
+            <p id="MyP1">My class</p>
+            <strong>My strong</strong>
+        </article>
+    </div>
+
+    <br>
+
+    <div id="myId">
+        <article>
+            <p id="MyP2">My id</p>
+        </article>
+    </div>
+    <span>My span</span>
+
+</body>
+
+</html>
+
+<script>
+    // Process only if document is ready
+    $(document).ready(function () {
+        // Select div elements and apply styles
+        $('div#myId').css({
+            'background-color': 'grey',
+            'color': 'white',
+            'font-size': '20px',
+            'border': '2px solid black',
+            'padding': '10px'
+        })
+        $('div.myClass article p').html('<h1>Advanced selectors in jQuery</h1>');
+        $('#MyP1, #MyP2, span').text('Multiple selectors in jQuery');
+    });
+</script>

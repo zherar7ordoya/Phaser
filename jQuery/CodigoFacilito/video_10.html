@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+
+    <div class="example test">
+        <p>My p</p>
+    </div>
+
+    <div class="example">
+        <span>My span</span>
+    </div>
+
+    <ul>
+        <li>List item 1</li>
+        <li>List item 2</li>
+        <li>List item 3</li>
+        <li>List item 4</li>
+    </ul>
+
+</body>
+
+</html>
+
+<script>
+    $(document).ready(function ()
+    {
+        var selected_elements = $('.example');
+
+        if (selected_elements.length > 0) {
+                console.log('Number of elements with the class "example": ' + selected_elements.length);
+        } else {
+            console.log('No elements found with the class "example".');
+        }
+
+        selected_elements.not('.test').text('This is no a test.');
+        selected_elements.has('p').text('This is a paragraph.');
+
+        $('li').first().html('<strong>This is the first list item.</strong>');
+        $('li').eq(1).html('<em>This is the second list item.</em>');
+    });
+</script>
