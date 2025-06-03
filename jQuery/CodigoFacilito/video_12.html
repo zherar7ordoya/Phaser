@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+
+<style>
+    body,
+    html {
+        background: #CCC;
+        color: #000;
+        font-family: Arial, sans-serif;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    #item1 {
+        background: #F00;
+        color: #FFF;
+        padding: 10px;
+        margin: 10px;
+    }
+
+    #item2 {
+        display: block;
+        background: #0F0;
+        color: #000;
+        padding: 10px;
+        margin: 10px;
+    }
+</style>
+
+<body>
+
+    <h1>Video 12: m&eacute;todo .ccs() de jQuery</h1>
+    <div id="item1">Item 1</div>
+    <div id="item2">Item 2</div>
+
+</body>
+
+</html>
+
+<script>
+    $(document).ready(function ()
+    {
+        var almacen = $("#parrafo").html();
+        console.log(almacen);
+    });
+</script>
