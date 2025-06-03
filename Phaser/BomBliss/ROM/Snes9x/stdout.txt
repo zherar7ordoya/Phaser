@@ -1,0 +1,9 @@
+Reading config file D:\Documents\FCC\Phaser\BomBliss\ROM\Snes9x\snes9x.conf.
+Saving	config file	D:\Documents\FCC\Phaser\BomBliss\ROM\Snes9x\snes9x.conf
+No ROM file header found.
+Map_LoROMMap
+"SUPER TETRIS2+BOMBLIS" [checksum ok] LoROM, 8Mbits, ROM+RAM+BAT, NTSC, SRAM:16Kbits, ID:, CRC32:8AE5E443
+Saving	config file	D:\Documents\FCC\Phaser\BomBliss\ROM\Snes9x\snes9x.conf
+Map_LoROMMap
+Saving	config file	D:\Documents\FCC\Phaser\BomBliss\ROM\Snes9x\snes9x.conf
+Saving	config file	D:\Documents\FCC\Phaser\BomBliss\ROM\Snes9x\snes9x.conf

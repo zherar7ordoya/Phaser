@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Bombliss Block Preciso</title>
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.60.0/dist/phaser.js"></script>
+</head>
+<body style="margin: 0; background: #000;">
+<script>
+    const config = {
+        type: Phaser.AUTO,
+        width: 200,
+        height: 200,
+        backgroundColor: '#000000',
+        scene: { create }
+    };
+
+    const BLOCK_SIZE = 40;
+
+/*
+6666646
+4     4
+6XXXX 6
+6XXXX 6
+6XXXX 6
+6XXXX 6
+6666646
+*/
+    const BORDER = 6;
+
+    function create() {
+        const g = this.add.graphics();
+
+        const x = 50;
+        const y = 50;
+
+        // Fondo celeste completo con borde blanco
+        g.lineStyle(BORDER, 0xffffff); // borde blanco
+        //g.fillStyle(0x00cfff); // celeste
+        g.strokeRect(x, y, BLOCK_SIZE, BLOCK_SIZE);
+        //g.fillRect(x, y, BLOCK_SIZE, BLOCK_SIZE);
+
+        // Interior oscuro (relleno menos bordes)
+        //g.fillStyle(0x003344); // celeste muy oscuro
+        //g.fillRect(x + BORDER, y + BORDER, BLOCK_SIZE - BORDER * 2, BLOCK_SIZE - BORDER * 2);
+
+        // Sombras internas negras en borde superior y derecho
+        //g.fillStyle(0x000000); // negro
+        // Borde superior
+        //g.fillRect(x + BORDER, y + BORDER, BLOCK_SIZE - BORDER * 2, BORDER);
+        // Borde derecho
+        //g.fillRect(x + BLOCK_SIZE - BORDER * 2, y + BORDER, BORDER, BLOCK_SIZE - BORDER * 2);
+    }
+
+    new Phaser.Game(config);
+</script>
+</body>
+</html>
