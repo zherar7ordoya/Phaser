@@ -258,7 +258,7 @@
         </keys>
     </input>
     <language>
-        <file>D:\Documents\FCC\Phaser\BomBliss\ROM\Nestopia\language\english.nlg</file>
+        <file>C:\Documents\FCC\Phaser\BomBliss\ROM\Nestopia\language\english.nlg</file>
     </language>
     <launcher>
         <search>
@@ -320,7 +320,7 @@
         <cheats>
             <auto-load>no</auto-load>
             <auto-save>no</auto-save>
-            <directory>D:\Documents\FCC\Phaser\BomBliss\ROM\Nestopia\cheats\</directory>
+            <directory>C:\Documents\FCC\Phaser\BomBliss\ROM\Nestopia\cheats\</directory>
         </cheats>
         <fds>
             <bios />
@@ -328,37 +328,40 @@
             <save-method>patch</save-method>
         </fds>
         <images>
-            <directory>D:\Documents\FCC\Phaser\BomBliss\ROM\Nestopia\</directory>
+            <directory>C:\Documents\FCC\Phaser\BomBliss\ROM\Nestopia\</directory>
+            <recent-directory>C:\Documents\FCC\Phaser\BomBliss\ROM\</recent-directory>
             <use-recent-directory>yes</use-recent-directory>
         </images>
         <patches>
             <auto-apply>no</auto-apply>
             <bypass-validation>no</bypass-validation>
-            <directory>D:\Documents\FCC\Phaser\BomBliss\ROM\Nestopia\patches\</directory>
+            <directory>C:\Documents\FCC\Phaser\BomBliss\ROM\Nestopia\patches\</directory>
         </patches>
         <recent>
             <directories>
+                <directory>C:\Documents\FCC\Phaser\BomBliss\ROM\</directory>
                 <locked>no</locked>
             </directories>
             <files>
+                <file>C:\Documents\FCC\Phaser\BomBliss\ROM\Tetris 2 + Bombliss (Japan).nes</file>
                 <locked>no</locked>
             </files>
         </recent>
         <samples>
-            <directory>D:\Documents\FCC\Phaser\BomBliss\ROM\Nestopia\samples\</directory>
+            <directory>C:\Documents\FCC\Phaser\BomBliss\ROM\Nestopia\samples\</directory>
         </samples>
         <saves>
-            <directory>D:\Documents\FCC\Phaser\BomBliss\ROM\Nestopia\save\</directory>
+            <directory>C:\Documents\FCC\Phaser\BomBliss\ROM\Nestopia\save\</directory>
             <force-read-only>no</force-read-only>
         </saves>
         <screenshots>
-            <directory>D:\Documents\FCC\Phaser\BomBliss\ROM\Nestopia\screenshots\</directory>
+            <directory>C:\Documents\FCC\Phaser\BomBliss\ROM\Nestopia\screenshots\</directory>
             <format>png</format>
         </screenshots>
         <states>
             <auto-export>yes</auto-export>
             <auto-import>yes</auto-import>
-            <directory>D:\Documents\FCC\Phaser\BomBliss\ROM\Nestopia\states\</directory>
+            <directory>C:\Documents\FCC\Phaser\BomBliss\ROM\Nestopia\states\</directory>
             <use-compression>yes</use-compression>
         </states>
         <tapes>
@@ -474,7 +477,7 @@
             </ry>
             <yellow-boost>no</yellow-boost>
         </decoder>
-        <device>D7B71E3E-4925-11CF-FE73-0D201FC2C435</device>
+        <device>D7B78E66-4242-11CF-8366-0AF0B7C2C435</device>
         <filters>
             <2xsai>
                 <bilinear>no</bilinear>
@@ -541,7 +544,7 @@
         </show>
         <size>
             <fullscreen>matched</fullscreen>
-            <window>1</window>
+            <window>3</window>
         </size>
     </view>
 </configuration>
