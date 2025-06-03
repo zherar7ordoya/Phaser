@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+
+<style>
+    body,
+    html {
+        text-align: center;
+        background: #CCC;
+        font-family: Arial, sans-serif;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    header {
+        display: block;
+        background: #333;
+        color: white;
+        padding: 20px;
+        width: 365px;
+    }
+
+    #e1, #e2 {
+        display: block;
+        width: 150px;
+        height: 150px;
+        background: #0080FF;
+        border: 1px solid #000;
+        margin: 10px;
+        padding: 10px;
+    }
+    
+    p{
+        color: #FFF;
+        font-size: 20px;
+        font-weight: bold;
+        margin: 20px;
+    }
+    
+</style>
+
+<body>
+
+    <header>
+        <img src="https://www.w3schools.com/images/w3schools_green.jpg" alt="W3Schools.com" style="width: 200px; height: 200px;">
+    </header>
+    <div id='e1'>...</div>
+    <div id='e2'>
+        <p>Hi!</p>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    $(document).ready(function ()
+    {
+        var position = $('#e2').position();
+        console.log("Position left: ", position.left);
+        console.log("Position top: ", position.top);
+        
+        var offset = $('#e2').offset();
+        console.log("Offset left: ", offset.left);
+        console.log("Offset top: ", offset.top);
+    });
+</script>

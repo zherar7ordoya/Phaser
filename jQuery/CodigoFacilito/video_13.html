@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+
+<style>
+    .test {
+        background: red;
+    }
+</style>
+
+<body>
+
+    <div id='test'>Click on me</div>
+
+</body>
+
+</html>
+
+<script>
+    $(document).ready(function ()
+    {
+        $(document).click(function ()
+        {
+            $('#test').toggleClass('test');
+            if ($('#test').hasClass('test')) {
+                $('#test').text("I'm red");
+            } else {
+                $('#test').text("Click on me to turn me red");
+            }
+        });
+    });
+</script>
