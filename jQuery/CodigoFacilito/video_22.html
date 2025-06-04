@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>jQuery.data demo</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 20px;
+            font-size: 20px;
+        }
+
+        div {
+            color: blue;
+        }
+
+        span {
+            color: red;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+
+    <div id="caja1">Here!</div>
+
+    <!-- ************************ SCRIPTS AREA ************************ -->
+
+    <script>
+        $(document).ready(function ()
+        {
+            /*
+            $("#caja1").data("nombre", "Gerardo");
+            $("#caja1").mouseover(function ()
+            {
+                var nombre = $(this).data("nombre");
+                $(this).html("Hola " + nombre);
+                $(this).css("background", "yellow");
+            });
+            $("#caja1").mouseout(function ()
+            {
+                $(this).html("Here!");
+                $(this).css("background", "white");
+            });
+            */
+
+            $("#caja1").data("nombre", "Gerardo");
+
+            var x = 0;
+
+            var function1 = function ()
+            {
+                var nombre = $(this).data("nombre");
+                $(this).html("Hola " + nombre);
+                $(this).css("background", "yellow");
+            }
+
+            var function2 = function ()
+            {
+                x++;
+                if (x == 3)
+                {
+                    $(this).off("mouseout");
+                }
+                $(this).html("Here!");
+                $(this).css("background", "white");
+            }
+
+            $("#caja1").on({
+                mouseover: function1,
+                mouseout: function2
+            })
+        });
+    </script>
+
+</body>
+
+</html>

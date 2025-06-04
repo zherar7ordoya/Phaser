@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>jQuery.data demo</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 20px;
+            font-size: 20px;
+        }
+
+        div {
+            color: blue;
+        }
+
+        span {
+            color: red;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-1.7.2.js"></script>
+</head>
+
+<body>
+
+    <a href="https://www.youtube.com/watch?v=1g4P8d2b9aY" target="_blank" id="eventoUno">Watch the video</a>
+    <br>
+    <a href="https://www.youtube.com/watch?v=1g4P8d2b9aY" target="_blank" id="eventoDos">Watch the video</a>
+
+<!-- ************************ SCRIPTS AREA ************************ -->
+
+    <script>
+        $(document).ready(function ()
+        {
+            $("a").click(function (event)
+            {
+                event.preventDefault(); // Prevent the default action of the link
+                var id = $(this).attr("id");
+                console.log("You clicked on: " + id);
+            });
+        });
+    </script>
+
+</body>
+
+</html>

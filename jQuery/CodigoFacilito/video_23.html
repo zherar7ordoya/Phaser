@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Código Facilito</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 20px;
+            font-size: 20px;
+        }
+
+        div {
+            color: blue;
+        }
+
+        span {
+            color: red;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-1.7.2.min.js"></script>
+</head>
+
+<body>
+
+    <input type="checkbox" id="miInput" checked="checked">¿Vamos bien?
+    <button class="cambiar">Primer botón</button>
+    <button class="cambiar">Segundo botón</button>
+
+    <!-- ************************ SCRIPTS AREA ************************ -->
+
+    <script>
+        $(document).ready(function ()
+        {
+            $("#miInput").on("cambio", function (e, txt)
+            {
+                console.log("Evento personalizado: " + txt);
+
+                if (this.checked)
+                {
+                    $("#miInput").removeAttr("checked");
+                    $(".cambiar").text("ENCENDER");
+                }
+                else
+                {
+                    $("#miInput").attr("checked", "checked");
+                    $(".cambiar").text("APAGAR");
+                }
+            });
+            $(".cambiar").click(function ()
+            {
+                $("#miInput").trigger("cambio", [$(this).text()]);
+            });
+        });
+    </script>
+
+</body>
+
+</html>
