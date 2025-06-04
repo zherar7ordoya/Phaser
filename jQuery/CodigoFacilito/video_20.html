@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>jQuery.data demo</title>
+    <style>
+        div {
+            color: blue;
+        }
+
+        span {
+            color: red;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-1.7.2.js"></script>
+</head>
+
+<body>
+
+    <div>About Browser Detection</div>
+
+    <script>
+        $(document).ready(function ()
+        {
+            $.each($.browser, function (i, val)
+            {
+                $("<div>" + i + " : <span>" + val + "</span>").appendTo(document.body);
+            });
+        });
+    </script>
+
+</body>
+
+</html>

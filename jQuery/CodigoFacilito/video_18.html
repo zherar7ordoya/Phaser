@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 20px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <button id="test">Ejecutar</button>
+    <div id="e1">
+        Métodos utilitarios
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    $(document).ready(function ()
+    {
+        $('button').click(function ()
+        {
+            var arreglo = [1, 2, 3, 4, 5];
+
+            $.each(arreglo, function (indice, valor)
+            {
+                if ($.inArray(3, arreglo) !== -1)
+                {
+                    console.log('<p>El valor ' + $.inArray(3, arreglo) + ' está en el arreglo</p>');
+                }
+
+                if (arreglo[indice] == 3)
+                {
+                    return true;
+                }
+
+                $('#e1').append('<p>Índice: ' + indice + ', Valor: ' + valor + '</p>');
+
+                
+            });
+        });
+    });
+</script>

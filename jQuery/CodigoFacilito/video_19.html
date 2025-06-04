@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>jQuery.data demo</title>
+    <style>
+        div {
+            color: blue;
+        }
+
+        span {
+            color: red;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+</head>
+
+<body>
+
+    <div>
+        The values stored were
+        <span></span>
+        and
+        <span></span>
+    </div>
+
+    <script>
+        var div = $("div")[0];
+        $.data(div, "test", {
+            first: 16,
+            last: "pizza!"
+        });
+        $("span").first().text($.data(div, "test").first);
+        $("span").last().text($.data(div, "test").last);
+    </script>
+
+</body>
+
+</html>
