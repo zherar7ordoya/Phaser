@@ -44,11 +44,13 @@ class TetrisScene extends Phaser.Scene
         this.gameBoard = [];
         this.currentTetrimino = null;
         this.blockSprites = [];
+        
         for (let i = 0; i < 20; i++)
         {
             this.blockSprites[i] = new Array(10).fill(null);
         }
     }
+
     preload()
     {
         this.load.image("j", "assets/Shape Blocks/J.png");
@@ -72,6 +74,7 @@ class TetrisScene extends Phaser.Scene
             this.blockSize = oTetrimino.width / 4;
         });
     }
+
     create()
     {
         let bg = this.add.image(0, 0, "board");
@@ -91,6 +94,7 @@ class TetrisScene extends Phaser.Scene
         this.spawnTetrimino();
         this.cursors = this.input.keyboard.createCursorKeys();
     }
+
     spawnTetrimino()
     {
         const tetriminos = ["j", "i", "l", "z", "s", "t", "o"];
@@ -115,6 +119,7 @@ class TetrisScene extends Phaser.Scene
         this.currentTetrimino.body.collideWorldBounds = true;
         this.currentTetrimino.blocks = this.calculateBlockPositions(this.currentTetriminoType, 0);
     }
+
     calculateBlockPositions(type)
     {
         const positions = [];
@@ -131,6 +136,7 @@ class TetrisScene extends Phaser.Scene
         }
         return positions;
     }
+
     update()
     {
         this.moveCounter++;
@@ -208,6 +214,7 @@ class TetrisScene extends Phaser.Scene
         });
         return moveValid;
     }
+
     setTetriminoOnBoard(value)
     {
         this.currentTetrimino.blocks.forEach((block) =>
@@ -238,6 +245,7 @@ class TetrisScene extends Phaser.Scene
         }
         return false;
     }
+
     landTetrimino()
     {
         this.setTetriminoOnBoard(1);
