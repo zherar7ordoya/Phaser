@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Código Facilito</title>
 
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.7.2.js"></script>
 
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="./style.css">
@@ -43,40 +43,14 @@
         $("#main form").submit(function (e)
         {
             e.preventDefault();
+            var info = $("#main form").serialize();
 
-            $.ajax({
-                beforeSend: function ()
+            $.getJSON('json.php', info, function (resp)
+            {
+                $.each(resp, function (c, v)
                 {
-                    //$("#status").spin({radius:4, width: 4, height: 4, length: 4});
-                    const spinner = new Spinner({ radius: 6, length: 6, width: 3 });
-                    spinner.spin(document.getElementById("status"));
-                },
-                url: pet,
-                type: met,
-                data: $("#main form").serialize(),
-                //data: { nombre: nom, mail: m, mensaje: msj },
-                success: function (resp)
-                {
-                    if (resp == "Correcto")
-                    {
-                        $("#status").html("<img src='./images/sign-check.png'>");
-                    }
-                    else
-                    {
-                        $("#status").html("<img src='./images/sign-error.png'>");
-                    }
-                },
-                error: function (jqXHR, estado, error)
-                {
-
-                    console.log(estado);
-                    console.log(error);
-                },
-                complete: function (jqXHR, estado)
-                {
-                    console.log(estado);
-                },
-                timeout: 3000
+                    console.log(c + " : " + v);
+                });
             });
         });
     });
