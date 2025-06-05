@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Código Facilito</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 20px;
+            font-size: 20px;
+        }
+
+        div {
+            color: blue;
+        }
+
+        span {
+            color: red;
+        }
+
+        #caja1 {
+            width: 400px;
+            height: 80px;
+            background-color: rgba(56, 56, 56, 0.8);
+            margin-bottom: 20px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+
+    <div id="caja1">
+        <span>Hola, soy un span dentro de una caja</span>
+    </div>
+    <button id="btn1">Mostrar</button>
+    <button id="btn2">Ocultar</button>
+
+</body>
+
+</html>
+
+<!-- JavaScript -->
+
+<script>
+    var caja1bg;
+    var v = 0;
+    var elem = $("#caja1");
+
+    $(document).ready(function ()
+    {
+        $("#btn1").click(function () {
+            elem.fadeIn(1000);
+        });
+        $("#btn2").click(function () {
+            elem.fadeOut(1500);
+        });
+    });
+</script>

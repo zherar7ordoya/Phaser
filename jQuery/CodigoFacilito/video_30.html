@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Código Facilito</title>
+
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="./style.css">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <script src="./javascripts/jquery.spin.js"></script>
+    <link rel="stylesheet" href="./stylesheets/jquery.spin.css">
+
+</head>
+
+<body>
+
+    <div id="" main>
+        <h1>Formulario de contacto</h1>
+        <form action="peticion.php" name="fo" method="post">
+            <input type="text" name="nombre" placeholder="Nombre..." required>
+            <input type="email" name="mail" placeholder="Correo electrónico..." required>
+            <textarea name="mensaje" placeholder="Mensaje..." required></textarea>
+            <div style="display:block; width:60%;margin:0% auto;">
+                <input type="submit" name="send" value="Enviar">
+                <div id="status"></div>
+            </div>
+        </form>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    $(document).ready(function ()
+    {
+        var pet = $("#main form").attr("action");
+        var met = $("#main form").attr("method");
+        var nom, m, msj;
+
+        $("main form").submit(function (e)
+        {
+            e.preventDefault();
+
+            $.ajax({
+                beforeSend: function ()
+                {
+                    $("#status").spin({ radius: 3, with: 2, height: 2, length: 4 });
+                    //$("#status").spin("show");
+
+                    nom = document.fo.nombre.value;
+                    m = document.fo.mail.value;
+                    msj = document.fo.mensaje.value;
+                },
+                url: pet,
+                type: met,
+                data: $("#main form").serialize(),
+                //data: { nombre: nom, mail: m, mensaje: msj },
+                success: function (info)
+                {
+                    $("#status").spin("hide");
+                    console.log(info);
+                },
+                error: function (jqXHR, estado, error)
+                {
+                    $("#status").spin(false);
+                    console.log(estado);
+                    console.log(error);
+                },
+                complete: function (jqXHR, estado)
+                {
+                    $("#status").spin(false);
+                    console.log(estado);
+                },
+                timeout: 10000
+            });
+        });
+
+
+
+
+    });
+</script>
