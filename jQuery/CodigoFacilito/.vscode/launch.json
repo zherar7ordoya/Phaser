@@ -2,10 +2,16 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Attach to Live Server",
+            "name": "Iniciar servidor Node",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceFolder}/server.js"
+        },
+        {
+            "name": "Debug con Brave",
             "type": "chrome",
             "request": "launch",
-            "url": "http://127.0.0.1:5500/index.html",
+            "url": "http://localhost:3000",
             "webRoot": "${workspaceFolder}",
             "runtimeExecutable": "C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application\\brave.exe"
         }
