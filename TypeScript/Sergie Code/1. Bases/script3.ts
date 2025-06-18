@@ -29,3 +29,7 @@ pelicula3.director = "Christopher Nolan";
 pelicula3.año = 2014;
 pelicula3.protagonistas.push("Matthew McConaughey", "Anne Hathaway");
 pelicula3.mostrarInfo();
+
+const anon = () => {
+    console.log("Esta función no tiene nombre y no se puede invocar directamente.");
+};
