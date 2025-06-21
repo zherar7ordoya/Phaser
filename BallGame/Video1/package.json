@@ -12,5 +12,8 @@
     "description": "",
     "devDependencies": {
         "es-dev-server": "^2.1.0"
+    },
+    "dependencies": {
+        "phaser": "^3.90.0"
     }
 }
