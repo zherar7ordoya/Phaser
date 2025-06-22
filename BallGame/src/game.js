@@ -9,10 +9,10 @@ export class Game extends Phaser.Scene
 
     preload()
     {
-        this.load.image('background', 'images/background.png');
-        this.load.image('gameover', 'images/gameover.png');
-        this.load.image('platform', 'images/platform.png');
-        this.load.image('ball', 'images/ball.png')
+        this.load.image('background', '/images/background.png');
+        this.load.image('gameover', '/images/gameover.png');
+        this.load.image('platform', '/images/platform.png');
+        this.load.image('ball', '/images/ball.png')
     }
 
     create()
