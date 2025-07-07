@@ -1,4 +1,5 @@
 import * as Phaser from 'phaser';
+import { ScoreBoard } from './components/ScoreBoard';
 
 // Una escena en Phaser es como un “nivel” o “pantalla” del juego.
 export class Game extends Phaser.Scene {
@@ -7,6 +8,10 @@ export class Game extends Phaser.Scene {
     // a esta escena dentro del juego.
     constructor() {
         super({ key: 'game' });
+    }
+
+    init() {
+        this.scoreboard = new ScoreBoard(this);
     }
 
     // La función preload() se ejecuta antes de que el juego comience. Aquí
@@ -24,7 +29,7 @@ export class Game extends Phaser.Scene {
     // La función create() se ejecuta una vez cuando se inicia la escena. Aquí
     // se colocan los objetos del juego en pantalla.
     create() {
-        
+
         // Activa los límites del mundo físico (colisiones). true en los 3
         // primeros ejes (izquierda, derecha y arriba) y false en el de abajo →
         // permite que la pelota caiga fuera de pantalla.
@@ -37,6 +42,8 @@ export class Game extends Phaser.Scene {
         // perdemos.
         this.gameoverImage = this.add.image(400, 90, 'gameover');
         this.gameoverImage.visible = false;
+
+        this.scoreboard.create();
 
         // Crea la plataforma como objeto físico. setImmovable() indica que no
         // se moverá al chocar con algo.
@@ -66,8 +73,8 @@ export class Game extends Phaser.Scene {
         this.ball.setVelocity(velocity, 10);
 
         // Hace que la pelota y la plataforma colisionen (rebote garantizado).
-        this.physics.add.collider(this.ball, this.platform);
-        
+        this.physics.add.collider(this.ball, this.platform, this.platformImpact, null, this);
+
         // Configura el rebote perfecto: cada vez que choca, conserva su energía
         // (no se ralentiza).
         this.ball.setBounce(1);
@@ -78,10 +85,14 @@ export class Game extends Phaser.Scene {
 
     }
 
+    platformImpact() {
+        this.scoreboard.incrementPoints(1);
+    }
+
     // Esta función corre continuamente (como un bucle) mientras la escena está
     // activa. Aquí se manejan las acciones del jugador.
     update() {
-        
+
         // Si se está presionando la flecha izquierda, mueve la plataforma
         // rápidamente hacia la izquierda.
         if (this.cursors.left.isDown) {
